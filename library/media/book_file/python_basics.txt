@@ -1,0 +1,21 @@
+Front    Back
+What is the difference between = and == in Python?    = assigns a value to a variable, while == checks if two values are equal.
+What data type is x = 42?    Integer (int)
+How do you write an if statement to check if x is greater than 5?    if x > 5:
+What does elif stand for in Python?    Else if - it’s used to check another condition if the previous if fails.
+What’s the output of: while x < 3: print(x); x += 1 (starting with x = 0)?    0 1 2 (prints 0, 1, 2, then stops when x = 3)
+What does a for loop do with: for i in range(3): print(i)?    Loops 3 times, printing 0, 1, 2.
+What’s a function definition look like for adding two numbers?    def add(a, b): return a + b
+What’s a lambda function for multiplying x by 2?    lambda x: x * 2
+How do you create a list with 1, 2, 3?    my_list = [1, 2, 3]
+What’s the difference between a list and a tuple?    Lists are mutable (can be changed), tuples are immutable (can’t be changed).
+How do you access the value for key 'name' in dict = {'name': 'Alex'}?    dict['name'] (returns 'Alex')
+What’s the output of: set([1, 2, 2, 3])?    {1, 2, 3} (sets remove duplicates)
+How do you make a string uppercase?    string.upper() (e.g., 'hello'.upper() -> 'HELLO')
+What does try/except do?    try runs code that might fail; except catches and handles errors.
+What’s the purpose of finally in try/except/finally?    finally runs code no matter what, even if an error occurs or not.
+How do you load JSON data from a string like '{"key": "value"}'?    import json; data = json.loads('{"key": "value"}')
+What’s a Python class in simple terms?    A blueprint for creating objects with attributes and methods.
+How do you define a class called Dog with a name attribute?    class Dog: def __init__(self, name): self.name = name
+What does self mean in a class?    Refers to the instance of the class itself, used to access its attributes/methods.
+What’s a basic Flask route look like?    from flask import Flask; app = Flask(__name__); @app.route('/') def home(): return 'Hello!'

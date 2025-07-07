@@ -1,0 +1,30 @@
+# Python virtual environment
+myevn/
+myenv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django/Migrations
+*/migrations/
+db.sqlite3
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Media/uploads (optional, if you have user uploads)
+media/
+uploads/

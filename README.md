@@ -11,7 +11,6 @@ A RESTful API for managing books and categories. Users can register, log in, and
 - Assign books to categories
 
 ---
-
 ## Setup Instructions
 
 1. **Clone the repository**
@@ -27,12 +26,33 @@ A RESTful API for managing books and categories. Users can register, log in, and
    ```bash
    pip install -r requirements.txt
    ```
-5. **Run the server**
-   ```bash
-   python manage.py runserver
-   ```
 
 ---
+
+## Database Setup
+
+1. **Apply migrations** to set up the database schema:
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+2. **Create a superuser** (optional, for admin access):
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+> **Note:**  
+> The database file (`db.sqlite3`) and migration files are not included in the repository.  
+> You must run the above commands to initialize your database.
+
+---
+
+## Running the Server
+
+Start the development server:
+```bash
+python manage.py runserver
+```
 
 ## Authentication
 

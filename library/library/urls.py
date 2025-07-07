@@ -8,8 +8,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 urlpatterns = [
     path('admin/', admin.site.urls),
     #personal installed app urls
+    
+    
     #for the book and category path
-    path('api/', include('core.urls')),
+    path('', include('core.urls')),
     
     #for registration and login
     path('', include('users.urls')),

@@ -65,32 +65,32 @@ python manage.py runserver
 ### Authentication
 
 - **Register:**  
-  `POST /register/`
+  `POST /register`
 - **Login (obtain JWT):**  
-  `POST /login/`  
+  `POST /login`  
   _Returns access and refresh tokens. Use the access token as a Bearer token for authenticated requests._
 
 ### Categories
 
 - **List categories:**  
-  `GET /api/create_category/`
+  `GET /category`
 - **Create category:**  
-  `POST /api/create_category/`
+  `POST /category`
 - **Update category:**  
-  `PUT /api/update/<id>/category/`
+  `PUT /category/<id>`
 - **Delete category:**  
-  `DELETE /api/delete/<id>/category/`
+  `DELETE /category/<id>`
 
 ### Books
 
 - **List books:**  
-  `GET /api/create_book/`
+  `GET /book`
 - **Create book:**  
-  `POST /api/create_book/`
+  `POST /book`
 - **Update book:**  
-  `PUT /api/update/<id>/book/`
+  `PUT /book/<id>`
 - **Delete book:**  
-  `DELETE /api/delete/<id>/book/`
+  `DELETE /book/<id>`
 
 ---
 

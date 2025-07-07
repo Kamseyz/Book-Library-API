@@ -22,11 +22,11 @@ class CreateCategoryView(generics.ListCreateAPIView):
     pagination_class = PageNumberPagination
     
     def get_queryset(self):
-        return Category.objects.filter()
+        return Category.objects.filter(user = self.request.user)
 
     
-# TO UPDATE CATEGORY
-class UpdateCategoryView(generics.RetrieveUpdateAPIView):
+# TO UPDATE/DELETE CATEGORY
+class UpdateDeleteCategoryView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category
     serializer_class = UpdateSerializedCategory
     permission_classes = [permissions.IsAuthenticated]
@@ -34,14 +34,7 @@ class UpdateCategoryView(generics.RetrieveUpdateAPIView):
     def get_queryset(self):
         return Category.objects.filter(user = self.request.user)
     
-# TO DELETE CATEORY
-class DeleteCategoryView(generics.RetrieveDestroyAPIView):
-    serializer_class = SerializedCategory
-    queryset = Category
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        return Category.objects.filter(user = self.request.user)
+
 
 
 ######################################################################
@@ -53,9 +46,11 @@ class CreateSerializedBook(generics.ListCreateAPIView):
     pagination_class = PageNumberPagination
     
     def get_queryset(self):
-        return Book.objects.filter()
-# TO UPDATE BOOK
-class UpdateSerializedBook(generics.RetrieveUpdateAPIView):
+        return Book.objects.filter(posted_by = self.request.user)
+    
+    
+# TO UPDATE/DELETE BOOK
+class UpdateDeleteSerializedBook(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UpdateSerializedBook
     queryset = Book
     permission_classes = [permissions.IsAuthenticated]
@@ -63,13 +58,3 @@ class UpdateSerializedBook(generics.RetrieveUpdateAPIView):
     def get_queryset(self):
         return Book.objects.filter(posted_by = self.request.user)
     
-    
-# TO DELETE BOOK RECORDS 
-
-class DeleteSerializedBook(generics.RetrieveDestroyAPIView):
-    serializer_class = SerializedBook
-    queryset = Book
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        return Book.objects.filter(posted_by = self.request.user)

@@ -8,6 +8,7 @@ class SerializedCategory(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = [
+            'id',
             'name'
         ]
         
@@ -17,8 +18,11 @@ class CreateSerializedCategory(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = [
+            'id',
             'name'
         ]
+        
+        read_only_fields = ['id']
      
     #create category   
     def create(self, validated_data):
@@ -36,9 +40,10 @@ class CreateSerializedCategory(serializers.ModelSerializer):
             return attrs
         
     def validate_name(self,value):
-        if Category.objects.filter(name = value).exists():
+        cleaned_value = value.strip()
+        if Category.objects.filter(name__iexact= cleaned_value).exists():
             raise serializers.ValidationError("Category already exist")
-        return value
+        return cleaned_value
 
 
 
@@ -137,6 +142,7 @@ class UpdateSerializedBook(serializers.ModelSerializer):
         return instance
     
     def validate_title(self,value):
-        if Book.objects.filter(title = value).exists():
+        cleaned_value = value.strip()
+        if Book.objects.filter(title__iexact = cleaned_value,).exists():
             raise serializers.ValidationError('Book title already exist')
-        return value
+        return cleaned_value

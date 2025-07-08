@@ -126,4 +126,6 @@ python manage.py runserver
 
 ---
 
-**Open source project for learning purposes.**
+## License
+
+This project is licensed under the MIT License.
